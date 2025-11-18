@@ -1,8 +1,9 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-
+@Disabled
 @TeleOp
 public class Varible extends OpMode {
     @Override
@@ -12,12 +13,22 @@ public class Varible extends OpMode {
         boolean clawClosed = true;
         String teamName = "itkan";
         int motorAngle = 10;
+        String clawStatus = "N/A";
+
+        if (clawClosed = true){
+            //String clawStatus = "closed";
+        } else {
+            //return String clawStatus = "opened";
+        }
 
         telemetry.addData("TeamNumber", teamNumber);
         telemetry.addData("motorSpeed", motorSpeed);
-        telemetry.addData("clawClosed", clawClosed);
+        telemetry.addData("clawClosed", clawStatus);
         telemetry.addData("Name", teamName);
         telemetry.addData("Motor angle", motorAngle);
+
+
+
 
 
     }
