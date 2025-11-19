@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-@Disabled
+
 @TeleOp
 public class Varible extends OpMode {
     @Override
@@ -16,9 +16,9 @@ public class Varible extends OpMode {
         String clawStatus = "N/A";
 
         if (clawClosed = true){
-            //String clawStatus = "closed";
+            clawStatus = "closed";
         } else {
-            //return String clawStatus = "opened";
+            clawStatus = "opened";
         }
 
         telemetry.addData("TeamNumber", teamNumber);
