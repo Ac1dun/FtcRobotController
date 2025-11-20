@@ -1,8 +1,9 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-
+@Disabled
 @TeleOp
 public class useRoborLocation extends OpMode {
     robotLocationPractice robotLocationPractice = new robotLocationPractice(0);
@@ -15,10 +16,32 @@ public class useRoborLocation extends OpMode {
             robotLocationPractice.turnRobot(-0.1);
         }
         telemetry.addData("heading", robotLocationPractice.getHeading());
+        telemetry.addData("Angle", robotLocationPractice.getAngle());
+
+
+        if (gamepad1.dpad_left) {
+            robotLocationPractice.changeX(0.1);
+        } else if (gamepad1.dpad_right) {
+            robotLocationPractice.changeX(-0.1);
+        }
+        telemetry.addData("x value", robotLocationPractice.getX());
+
+        if (gamepad1.dpad_up) {
+            robotLocationPractice.changeY(-0.1);
+        } else if (gamepad1.dpad_down) {
+            robotLocationPractice.changeY(0.1);
+        }
+        telemetry.addData("y value", robotLocationPractice.getY());
+
+
+
+
     }
 
     @Override
     public void init() {
         robotLocationPractice.setAngle(0);
+        robotLocationPractice.setX(0);
+        robotLocationPractice.setY(0);
     }
 }

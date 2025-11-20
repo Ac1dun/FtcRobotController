@@ -1,8 +1,12 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+
+@Disabled
 public class robotLocationPractice {
     double angle;
-
+    double x;
+    double y;
     public robotLocationPractice(double angle) {
         this.angle = angle;
     }
@@ -23,5 +27,32 @@ public class robotLocationPractice {
     }
     public void setAngle(double angle) {
         this.angle = angle;
+    }
+    public double getAngle() {
+        return this.angle;
+    }
+
+    public void changeX(double changeAmount) {
+        x += changeAmount;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getX() {
+        return this.x;
+    }
+
+    public void changeY(double amountChange) {
+        y += amountChange;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getY() {
+        return this.y;
     }
 }
