@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.mechanisms;
 
 import com.qualcomm.hardware.limelightvision.LLResult;
+import com.qualcomm.hardware.limelightvision.LLStatus;
 import com.qualcomm.hardware.limelightvision.Limelight3A;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
@@ -29,6 +30,14 @@ public class LimelightTest extends OpMode {
             telemetry.addData("target x offset", llResult.getTx());
             telemetry.addData("target y offset", llResult.getTy());
             telemetry.addData("target area offset", llResult.getTa());
+
+            LLStatus status = limelight3A.getStatus();
+            telemetry.addData("Name", "%s",
+                    status.getName());
+            telemetry.addData("LL", "Temp: %.1fC, CPU: %.1f%%, FPS: %d",
+                    status.getTemp(), status.getCpu(),(int)status.getFps());
+            telemetry.addData("Pipeline", "Index: %d, Type: %s",
+                    status.getPipelineIndex(), status.getPipelineType());
         }
     }
 }
