@@ -39,4 +39,8 @@ public class TestBench1 {
     public boolean isTouchSensorReleased() {
         return touchSensor.getState();
     }
+    public void setMotorZeroType(DcMotor.ZeroPowerBehavior zeroType) {
+        motor.setZeroPowerBehavior(zeroType);
+
+    }
 }
