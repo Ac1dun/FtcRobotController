@@ -7,16 +7,36 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp
 public class DcMotorPractice extends OpMode {
     TestBench1 bench = new TestBench1();
+    //TestBenchMotor bench = new TestBenchMotor();
     double leftStickCounter = 0;
-    double currentPower = 0.25;
+    double currentPower = 0.5;
+    double leftStickPress = 0;
+    double powerRev = 0.5;
+    boolean speedRevFlag;
+
     @Override
     public void init() {
         bench.init(hardwareMap);
     }
-    double leftStickPress = 0;
+
+
     @Override
     public void loop() {
+        double motorSpeed = -gamepad1.left_stick_y;
 
+        if (gamepad1.left_stick_button) {
+            speedRevFlag = !speedRevFlag;
+        }
+
+        /*
+        if (speedRevFlag) {
+            powerRev = 1;
+        } else if (!speedRevFlag) {
+            powerRev = 0.5;
+        }
+        currentPower = motorSpeed * powerRev;
+
+        /*
         telemetry.addData("counter", leftStickCounter);
 
         if (gamepad1.a) {
@@ -39,10 +59,13 @@ public class DcMotorPractice extends OpMode {
             leftStickPress = 0;
             leftStickCounter += 1;
         }
-
+        */
 
         telemetry.addData("motor revs", bench.getTicksPerRev());
-        double speedMotor = -gamepad1.left_stick_y;
-        bench.setMotorSpeed(speedMotor * currentPower);
+        telemetry.addData("power", motorSpeed);
+        telemetry.addData("max power", powerRev);
+        telemetry.addData("pwerrev", currentPower);
+        bench.setMotorSpeed(currentPower);
+        //bench.setMotorSpeed50100(motorSpeed,speedRevFlag);
     }
 }
