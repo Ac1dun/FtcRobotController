@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.mechanisms.TestBench1;
 import org.firstinspires.ftc.teamcode.mechanisms.TestBenchMotor;
 import org.firstinspires.ftc.teamcode.mechanisms.distanceTestBench;
+@Disabled
 @TeleOp
 public class distanceTest extends OpMode {
     distanceTestBench bench = new distanceTestBench();
