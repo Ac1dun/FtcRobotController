@@ -34,5 +34,6 @@ public class distanceTest extends OpMode {
         } else {
             motorBench.setMotorSpeed(1);
         }
+        telemetry.addData("motor speed", (detectedDistance-10) / 10);
     }
 }

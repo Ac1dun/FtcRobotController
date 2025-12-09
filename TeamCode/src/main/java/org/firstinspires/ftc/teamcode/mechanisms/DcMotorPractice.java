@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp
 public class DcMotorPractice extends OpMode {
-    TestBench1 bench = new TestBench1();
-    //TestBenchMotor bench = new TestBenchMotor();
+    //TestBench1 bench = new TestBench1();
+    TestBenchMotor bench = new TestBenchMotor();
     double leftStickCounter = 0;
     double currentPower = 0.5;
     double leftStickPress = 0;
@@ -65,7 +65,7 @@ public class DcMotorPractice extends OpMode {
         telemetry.addData("power", motorSpeed);
         telemetry.addData("max power", powerRev);
         telemetry.addData("pwerrev", currentPower);
-        bench.setMotorSpeed(currentPower);
-        //bench.setMotorSpeed50100(motorSpeed,speedRevFlag);
+        //bench.setMotorSpeed(currentPower);
+        bench.setMotorSpeed50100(motorSpeed,speedRevFlag);
     }
 }
