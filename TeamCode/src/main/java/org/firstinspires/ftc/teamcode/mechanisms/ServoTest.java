@@ -14,7 +14,7 @@ public class ServoTest {
         servoPos = hwMap.get(Servo.class, "servo_pos");
         servoCont = hwMap.get(CRServo.class, "servo_cont");
         servoPos.scaleRange(0, 1);
-        servoCont.setDirection(DcMotorSimple.Direction.REVERSE);
+    //    servoCont.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     public void setServoPos(double angle) {
